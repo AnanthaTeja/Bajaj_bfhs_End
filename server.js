@@ -1,7 +1,12 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const port = 3000;
-// Middleware to parse JSON request bodies
+
+// Enable CORS for all routes
+
+app.use(cors());
+
 app.use(express.json());
 
 const userId = "AnanthaTeja_20122003"; // Hardcoded user_id
