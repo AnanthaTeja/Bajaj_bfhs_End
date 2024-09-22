@@ -70,7 +70,15 @@ app.post("/bfhl", upload.single("file"), (req, res) => {
     file_size_kb: fileSizeKB,
   });
 });
-
+app.get("/", (req, res) => {
+  res.json({ operation_code: 1 });
+});
+app.get("/bfhl", (req, res) => {
+  res.json({
+    is_success: true,
+    operation_code: 1,
+  });
+});
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
